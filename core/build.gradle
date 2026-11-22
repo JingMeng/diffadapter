@@ -12,7 +12,7 @@ android {
         targetSdkVersion _targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -20,6 +20,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    
     }
 
 }
@@ -42,3 +43,5 @@ dependencies {
         exclude group: "com.android.support"
     }
 }
+
+

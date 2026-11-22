@@ -1,6 +1,6 @@
 package com.silencedut.diffadapter.utils;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.silencedut.diffadapter.data.BaseMutableData;
 

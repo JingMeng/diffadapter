@@ -1,6 +1,6 @@
 package com.silencedut.diffadapter.holder;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 import com.silencedut.diffadapter.DiffAdapter;

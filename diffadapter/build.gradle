@@ -1,10 +1,14 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 group='com.github.silencedut'
 
 android {
+    namespace 'com.silencedut.diffadapter'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions { jvmTarget = '11' }
     compileSdkVersion _compileSdkVersion
 
     defaultConfig {
@@ -13,7 +17,7 @@ android {
         versionCode _versionCode
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -22,17 +26,18 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    
     }
 
-    // 指定编码
+    // ??????
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
     }
 
-    // 打包源码
+    // ??????
     task sourcesJar(type: Jar) {
         from android.sourceSets.main.java.srcDirs
-        classifier = 'sources'
+        archiveClassifier.set('sources')
     }
 
     artifacts {
@@ -43,11 +48,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compileOnly "com.android.support:appcompat-v7:$_supportVersion"
-    compileOnly "com.android.support:recyclerview-v7:$_supportVersion"
-    compileOnly "android.arch.lifecycle:extensions:$lifecycle_extensions"
+    compileOnly 'androidx.appcompat:appcompat:1.1.0'
+    compileOnly 'androidx.recyclerview:recyclerview:1.1.0'
+    compileOnly "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions"
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
 }
+
+

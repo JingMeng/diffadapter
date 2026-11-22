@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+    namespace 'com.silencedut.diffadapterdemo'
     compileSdkVersion _compileSdkVersion
 
     defaultConfig {
@@ -12,13 +13,14 @@ android {
         targetSdkVersion _targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    
 
         debug {
             minifyEnabled false
@@ -40,3 +42,7 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 }
+
+
+
+
